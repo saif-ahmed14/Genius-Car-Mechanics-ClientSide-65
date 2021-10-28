@@ -4,13 +4,13 @@ const ManageServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://evening-earth-43065.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, []);
 
     const handleDelete = id => {
-        const uri = `http://localhost:5000/services/${id}`;
+        const uri = `https://evening-earth-43065.herokuapp.com/services/${id}`;
         fetch(uri, {
             method: 'DELETE'
         })
